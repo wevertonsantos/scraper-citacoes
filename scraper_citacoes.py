@@ -15,7 +15,8 @@ def main():
     # colocando frases no dicionário
     frases_no_dicionario(todas_frases,frases)
 
-    salvando_arquivo(frases)
+    # criando arquivo txt
+    criando_arquivo(frases)
 
 def buscar_pagina(url):
     try:
@@ -39,7 +40,7 @@ def frases_no_dicionario(todas_frases,frases):
         # adicionando texto e autor no dicionário
         frases[autor] = texto_portugues
 
-def salvando_arquivo(frases):
+def criando_arquivo(frases):
     with open("Citações.txt",'w') as arquivo:
         for frase in frases:
             arquivo.write(f"{frase}:{frases[frase]}\n\n")
