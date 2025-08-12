@@ -10,11 +10,7 @@ def main():
     # pegando todas as frases
     todas_frases = dados_pagina.find_all('div',class_='quote')
 
-    # percorrendo todas as frases
-    for div in todas_frases:
-        texto = div.find('span', class_="text").text
-        autor = div.find('small', class_="author").text
-        frases[autor] = texto
+    frases_no_dicionario(todas_frases,frases)
 
     print(frases)
 
@@ -27,5 +23,14 @@ def buscar_pagina(url):
         return dados_pagina
     except requests.exceptions.RequestException as e:
         print(f"Erro ao consultar: {e}")
+
+def frases_no_dicionario(todas_frases,frases):
+    # percorrendo todas as frases
+    for div in todas_frases:
+        # pegando texto e autor
+        texto = div.find('span', class_="text").text
+        autor = div.find('small', class_="author").text
+        # adicionando texto e autor no dicionário
+        frases[autor] = texto
 
 main()
