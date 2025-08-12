@@ -1,4 +1,4 @@
-import requests
+import requests,translate
 from bs4 import BeautifulSoup
 
 def main():
@@ -12,7 +12,6 @@ def main():
 
     frases_no_dicionario(todas_frases,frases)
 
-    print(frases)
 
 def buscar_pagina(url):
     try:
