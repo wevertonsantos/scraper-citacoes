@@ -4,7 +4,9 @@ from bs4 import BeautifulSoup
 def main():
     frases = {}
 
+    #buscar dados da página
     dados_pagina = buscar_pagina('https://quotes.toscrape.com/')
+    
     # pegando todas as frases
     todas_frases = dados_pagina.find_all('div',class_='quote')
 
@@ -14,7 +16,7 @@ def main():
         autor = div.find('small', class_="author").text
         frases[autor] = texto
 
-    print(frases) 
+    print(frases)
 
 def buscar_pagina(url):
     try:
