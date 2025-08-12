@@ -42,9 +42,6 @@ def frases_no_dicionario(todas_frases,frases):
 def salvando_arquivo(frases):
     with open("Citações.txt",'w') as arquivo:
         for frase in frases:
-            if list(frases.keys())[-1]:
-                arquivo.write(f"{frase}:{frases[frase]}")
-            else:
-                arquivo.write(f"{frase}:{frases[frase]}\n\n")
+            arquivo.write(f"{frase}:{frases[frase]}\n\n")
 
 main()
