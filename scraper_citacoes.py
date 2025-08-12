@@ -12,9 +12,15 @@ dados_pagina = BeautifulSoup(pagina.text,'html.parser')
 # pegando todas as frases
 todas_frases = dados_pagina.find_all('div',class_='quote')
 
+frases = {}
+
 # percorrendo todas as frases
 for div in todas_frases:
-    print(div)
+    texto = div.find('span', class_="text").text
+    autor = div.find('small', class_="author").text
+    frases[autor] = texto
+
+print(frases)
 
 def main():
     ...
