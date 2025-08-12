@@ -44,7 +44,7 @@ def salvando_arquivo(frases):
         for frase in frases:
             if list(frases.keys())[-1]:
                 arquivo.write(f"{frase}:{frases[frase]}")
-        else:
-            arquivo.write(f"{frase}:{frases[frase]}\n\n")
+            else:
+                arquivo.write(f"{frase}:{frases[frase]}\n\n")
 
 main()
