@@ -1,5 +1,6 @@
-import requests,translate
+import requests
 from bs4 import BeautifulSoup
+from translate import Translator
 
 def main():
     frases = {}
