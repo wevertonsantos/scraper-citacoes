@@ -12,6 +12,7 @@ def main():
     # pegando todas as frases
     todas_frases = dados_pagina.find_all('div',class_='quote')
 
+    # colocando frases no dicionário
     frases_no_dicionario(todas_frases,frases)
 
     print(frases)
